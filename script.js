@@ -78,6 +78,20 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+// Current balance Functionality..
+const calcDisplayBalance = movements => {
+  const balance = movements.reduce((acc, mov) => {
+    return acc + mov;
+  }, 0);
+  labelBalance.textContent = `${balance} Rs`;
+};
+
+// const calcDisplayBalance = function (movements) {
+//   const balance = movements.reduce((acc, mov) => acc + mov, 0);
+//   labelBalance.textContent = `${balance} Rs`;
+// };
+calcDisplayBalance(account1.movements);
+
 // Usernames Functionality...
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
